@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+  .main-grid-div {
+    transition: all 0.3s ease-out;
+    padding-right: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-grid {
+    transition: all 0.3s ease-out;
+    transform: translateX(-100%);
+  }
+}

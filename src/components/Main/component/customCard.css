@@ -1,0 +1,17 @@
+.custom-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-card:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+@media (max-width: 425px) {
+  .custom-card {
+    margin-top: 20px;
+  }
+  .custom-card:hover {
+    transform: none;
+  }
+}

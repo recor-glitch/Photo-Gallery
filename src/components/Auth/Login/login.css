@@ -1,0 +1,48 @@
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .lotie-div {
+    display: none;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Great Vibes");
+
+.main-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: rgba(0, 149, 246, 1) 0px 0px 0px 3px;
+  border-radius: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+.signup-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 149, 246, 1) 0px 0px 0px 3px;
+  border-radius: 0.35rem;
+  padding: 1rem;
+}
+
+.facebook-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "@emotion/react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import Login from "./components/Auth/Login/login";
+import Registration from "./components/Auth/Registration/registration";
+import FavouritePage from "./components/Favourite/favouritePage";
+import { Home } from "./components/Home/home";
+import Main from "./components/Main/Main";
+import ProfilePage from "./components/Profile/profilePage";
+import GuestRoute from "./Routes/GuestRoute";
+import ProtectedRoute from "./Routes/ProtectedRoute";
+import { theme } from "./Theme";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <GuestRoute path="/" element={<Login />} />
+          <GuestRoute path="/registration" element={<Registration />} />
+          <ProtectedRoute path="/home" element={<Home />}>
+            <Route path="" element={<Main />} />
+            <Route path="favourite" element={<FavouritePage />} />
+            <Route path="profile" element={<ProfilePage />} />
+          </ProtectedRoute>
+        </Router>
+      </ThemeProvider>
     </div>
   );
 }
