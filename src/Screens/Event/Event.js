@@ -1,6 +1,5 @@
 import React from 'react';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import appsIcon from '../assets/apps.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   ImageBackground,
@@ -10,12 +9,17 @@ import {
   View,
   ScrollView,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
-import Description from './Components/Description';
+import Description from '../Components/Description';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Event = ({route, navigation}) => {
   const item = route.params;
+
+  const handleBack = () => {
+    navigation.goBack();
+  };
 
   return (
     <LinearGradient styles={{flex: 1}} colors={['#4d4d43', 'black']}>
@@ -113,6 +117,40 @@ const Event = ({route, navigation}) => {
           </View>
           <Description />
         </View>
+        <View
+          style={{
+            bottom: 0,
+            padding: 20,
+            flexDirection: 'row',
+            backgroundColor: Colors.darker,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <View
+            style={{
+              flex: 0.15,
+              borderRadius: 50,
+              backgroundColor: 'rgba(56,56,56,0.5)',
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingVertical: 10,
+            }}>
+            <Icon name="favorite" size={25} color="#rgba(255,255,255,0.8)" />
+          </View>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: 'rgba(222,25,62,1)',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              borderRadius: 50,
+              paddingVertical: 10,
+              marginLeft: 10,
+            }}>
+            <Text style={styles.Text}>Get a ticket</Text>
+          </View>
+        </View>
+        <View style={{height: 50}}/>
       </ScrollView>
       <View
         style={{
@@ -124,65 +162,34 @@ const Event = ({route, navigation}) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
         }}>
-        <View
-          style={{
-            flex: 0.13,
-            flexDirection: 'row',
-            alignItems: 'center',
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            borderRadius: 50,
-            justifyContent: 'center',
-            height: 50,
-            paddingLeft: 5,
-          }}>
-          <Icon name="arrow-back-ios" size={25} color="rgba(255,255,255,0.8)" />
-        </View>
-        <View
-          style={{
-            flex: 0.15,
-            flexDirection: 'row',
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            alignItems: 'center',
-            borderRadius: 50,
-            justifyContent: 'center',
-            height: 50,
-          }}>
-          <Icon name="share" size={30} color="rgba(255,255,255,0.8)" />
-        </View>
-      </View>
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          padding: 20,
-          flexDirection: 'row',
-          backgroundColor: Colors.darker,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
-        <View
-          style={{
-            flex: 0.15,
-            borderRadius: 50,
-            backgroundColor: 'rgba(56,56,56,0.5)',
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingVertical: 10,
-          }}>
-          <Icon name="favorite" size={25} color="#rgba(255,255,255,0.8)" />
-        </View>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: 'rgba(222,25,62,1)',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            borderRadius: 50,
-            paddingVertical: 10,
-            marginLeft: 10,
-          }}>
-          <Text style={styles.Text}>Get a ticket</Text>
-        </View>
+        <TouchableOpacity onPress={handleBack}>
+          <View
+            style={{
+              alignItems: 'center',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              borderRadius: 50,
+              justifyContent: 'center',
+              padding: 8,
+            }}>
+            <Icon
+              name="arrow-back-ios"
+              size={25}
+              color="rgba(255,255,255,0.8)"
+            />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View
+            style={{
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              alignItems: 'center',
+              borderRadius: 50,
+              justifyContent: 'center',
+              padding: 8,
+            }}>
+            <Icon name="share" size={30} color="rgba(255,255,255,0.8)" />
+          </View>
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   );

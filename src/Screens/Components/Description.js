@@ -19,7 +19,7 @@ const Description = () => {
         </View>
       </View>
       <View style={{flex: 1, marginTop: 10}}>
-        {[...new Array(10)].map((item, index) => (
+        {[...new Array(5)].map((item, index) => (
           <ListTile key={index} />
         ))}
       </View>

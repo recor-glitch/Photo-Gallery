@@ -43,7 +43,7 @@ const {height, width} = Dimensions.get('window');
 const Home = ({navigation}) => {
   return (
     <LinearGradient
-      colors={['#400000', '#000000']}
+      colors={['rgba(1,31,75,1)', 'rgba(3,57,108,1)', '#000000']}
       style={{flex: 1, paddingHorizontal: 29}}>
       <StatusBar hidden />
       <View style={styles.header}>

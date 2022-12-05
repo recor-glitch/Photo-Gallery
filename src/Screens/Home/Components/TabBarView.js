@@ -55,7 +55,7 @@ const TabBarView = () => {
                   alignItems: 'center',
                   backgroundColor:
                     index === item.index
-                      ? 'rgba(128,0,0,1)'
+                      ? 'rgba(6,66,115,1)'
                       : 'rgba(244,204,204,0.5)',
                 },
                 {
